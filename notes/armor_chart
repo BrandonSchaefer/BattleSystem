@@ -1,0 +1,92 @@
+Armor Type         Cost(g.p)  Weight    Base Movement
+-----------------------------------------------------
+Banded              200         35           9"
+Brigandine          120         35           9"
+Basinet               8          5          12"
+Bronze Plate Mail   400         45           6"
+Chain, Mail          75         40           9"
+Chain, Elven          -         15          12"
+Field Plate        2000         60           6"
+Leather               5         15          12"
+Hide                 15         30           9"
+Padded                4         10          12"
+Plate               600         50           6"
+Full Plate   4000-10000         70           3"
+Ring                100         30           9"
+Scale               120         40           6"
+Shield, Large        15         10           -
+Shield, Small        10          5           -
+Splint               80         40           6"
+Studded              20         25           9"
+Helemt, Great        15         -            -
+Helemt, Small        10         -            -
+
+
+Armor Class
+-----------
+Shield                       -1
+Leather, Padded               8
+Studded, Ring                 7
+Brigandine, Scale Mail, Hide  6
+Chain Mail                    5
+Splint, Banded Mail, Bronze P 4
+Plate Mail                    3
+Field Plate                   2
+Full Plate                    1
+
+Head       // expected?
+Amulet     // magic
+Left_Ring  // magic
+Right_Ring // magic
+Weapon     // expected
+Shield     // expected
+bracers    // magic
+boots      // magic
+Ammo       // expected
+
+Equiptment
+{
+public:
+  int BaseAC();
+};
+
+Armor : public Item
+{
+  int base_armor;
+}
+
+Item
+{
+  int cost;
+  int weight;
+}
+
+
+        h
+        n
+    w r   r s
+      b
+        boots
+     ammo
+
+ArmorType
+{
+  CHEST,
+  HELM,
+  BRACERS,
+  SHIELD,
+  RING,
+  AMULET,
+}
+
+ItemType
+{
+  ARMOR,
+  HELM,
+  BRACERS,
+  SHIELD,
+  RING,
+  AMULET,
+  //WEAPON_MELEE,
+  //WEAPON_RANGED
+}

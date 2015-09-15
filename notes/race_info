@@ -1,0 +1,60 @@
+Character Class Limitations:
+
+Class        Dwarven  Elven  Gnome  Half-Elven  Halfling  Half-Orc  Human
+-------------------------------------------------------------------------
+Cleric          no     no     no       yes         no        yes     yes
+ -Druid         no     no     no       yes         no        no      yes
+Fighter         yes    yes    yes      yes         yes       yes     yes
+ -Paladin       no     no     no       no          no        no      yes
+ -Ranger        no     no     no       yes         no        no      yes
+Magic-User      no     yes    no       yes         no        no      yes
+ -Illusionist   no     no     yes      no          no        no      yes
+Thief           yes    yes    yes      yes         yes       yes     yes
+
+Penalties/Bonuses for Race:
+
+Race       Penalties/Bonuses
+----------------------------
+Dwarf      +1 Constitution, -1 Charisma
+Elf        +1 Dexterity,    -1 Constitution
+Half-Orc   +1 Strength,     +1 Constitution, -2 Charisma
+Halfling   +1 Dexterity,    -1 Strength
+Gnome      +1 Intelligence, -1 Strength
+
+Base Movement Rates
+
+Race      Rate
+--------------
+Human      12
+Dwarf       6
+Elf        12
+Gnome       6
+Half-elf   12
+Half-Orc   12
+Halfling    6
+
+Age:
+
+Race       Base Age  Variable Age (dice)
+--------------------------------
+Dwarf        40         5d6
+Elf         100         5d6
+Gnome        60         3d12
+Half-elf     15         1d6
+Half-orc      ?          ?
+Halfling     20         3d4
+Human        15         1d4
+
+
+Weight/Height (inc):
+
+Race        Height  Mod   Weight  Mod
+--------------------------------------
+Dwarf         43    1d10    130   4d10
+Elf           55    1d10     90   3d10
+Gnome         38    1d6      72   5d4
+Half-elf      60    2d6     110   3d12
+Half-orc       ?     ?        ?    ?
+Halfling      32    2d8      52   5d4
+Human         60    2d10    140   6d10
+

@@ -1,0 +1,10 @@
+Class Armor      Armor     Shield  Weapons*
+-------------------------------------------------------
+Cleric            any       any     club, flail, hammer, mace, staff
+ -Druid         leather    wooden   club, dagger, dart, hammer, scimitar, sling, spear, staff
+Fighter           any       any     any
+ -Paladin         any       any     any
+ -Ranger          any       any     any
+Magic-User       none      none     dagger, dart, staff
+ -Illusionist    none      none     dagger, dart, staff
+Thief           leather    none     club, dagger, dart, sling, short/broad/long sword

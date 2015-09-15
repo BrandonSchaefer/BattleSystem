@@ -1,0 +1,31 @@
+Experience Level/   Basic X.P   X.P Per      Special Ability   Exceptional Abliity
+Monsters Hit Die     Value      Hit Points   X.P. Bouns         X.P. Addition
+                     (BXPV)     (XP/HP)      (SAXPB)**         (EAXPA)***
+----------------------------------------------------------------------------
+ up to 1 - 1           5           1            2                 25
+ 1 - 1 to  1          10           1            4                 35
+ 1 + 1 to  2          20           2            8                 45
+ 2 + 1 to  3          35           3           15                 55
+ 3 + 1 to  4          60           4           25                 65
+ 4 + 1 to  5          90           5           40                 75
+ 5 + 1 to  6         150           6           75                125
+ 6 + 1 to  7         225           8          125                175
+ 7 + 1 to  8         375          10          175                275
+ 8 + 1 to  9         600          12          300                400
+ 9 + 1 to 10 +       900          14          450                600
+11 to 12+           1300          16          700                850
+13 to 14+           1800          18          950               1200
+15 to 16+           2400          20         1250               1600
+17 to 18+           3000          25         1550               2000
+19 to 20+           4000          30         2100               2500
+21 and up           5000          35         2600               3000
+
+
+SAXPB** = Typical Special Abilites: 4 or more attacks per round. Missile discharge,
+          Armor class of 0 or lower, special attacks (blood drain, hug, crush, etc.)
+          special defense (regeneration, hit only by special and/or magic weapons),
+          high intelligence which actually affects combat, use of minor (basically defensive) spells
+
+EAXPA*** = Typcial exceptional abilites: energy level drain, paralyis, posion, major breath weapon,
+           magic resistance, spell use, swallowing whole, weakness, attacks causing max damage greater
+           than 24 singly, 30 doubly, 36 trebly, or 42 in all combinations possible in 1 round.

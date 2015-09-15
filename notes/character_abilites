@@ -1,0 +1,119 @@
+Strength Table
+
+Ability                Damage       Weight
+ Score     Hit Prob  Adjustment   Allowance
+---------------------------------------------
+   3          -3         -1           5
+  4-5         -2         -1          10
+  6-7         -1          -          20
+  8-9          -          -          35
+ 10-11         -          -          40
+ 12-13         -          -          45
+ 14-15         -          -          55
+   16          -         +1          70
+   17         +1         +1          85
+   18         +1         +2         110
+ 18/01-50     +1         +3         135
+ 18/51-75     +2         +3         160
+ 18/76-90     +2         +4         185
+ 18/91-99     +2         +5         235
+ 18/00        +3         +6         335
+
+
+
+Intelligence Table
+
+Ability    Chance to       Max #
+ Score    Learn Spell   Spells/Level
+--------------------------------------
+   9          35%            6
+ 10-12        45%            7
+ 13-14        55%            9
+ 15-16        65%           11
+  17          75%           14
+  18          85%           18
+  19          95%          All
+
+
+Wisdom Table
+
+Ability   Magical Attacks  Bonus    Chance Of
+ Score      Adjustment*    Spells   Spell Failure
+-------------------------------------------------
+  3            -3            -          20%
+  4            -2            -          20%
+  5            -1            -          20%
+  6            -1            -          20%
+  7            -1            -          20%
+  8             -            -          20%
+  9             -            -          20%
+ 10             -            -          15%
+ 11             -            -          10%
+ 12             -            -           5%
+ 13             -          One 1st       0%
+ 14             -          One 1st       0%
+ 15            +1          One 2nd       0%
+ 16            +2          One 2nd       0%
+ 17*           +3          One 4th       0%
+ 18**          +4          One 4th       0%
+
+Magical Attacks Adjustments for saving throws applies to:
+beguiling, charming, fear, hypnosis, illuion, magic jarring, mass charming, phantasmal forces, possession, rulership.
+// TODO Figure out how to figure out what is where :)
+
+* Min wisdom for 6th lvl spells
+* Min wisdom for 7th lvl spells
+
+
+Dexterity Tabe
+
+Ability    Reaction/Attack   Defensive
+ Score       Adjustment     Adjustment (A.C)
+---------------------------------------
+    3            -3             +4
+    4            -2             +3
+    5            -1             +2
+    6             0             +1
+  7-14            0              0
+   15             0             -1
+   16            +1             -2
+   17            +2             -3
+   18            +3             -4
+
+
+Constiution Table
+
+Ability     Hit Point
+ Score      Adjustment
+----------------------
+   3            -2
+   4            -1
+   5            -1
+   6            -1
+ 7-14            0
+  15            +1
+  16            +2
+  17            +2(+3*)
+  18            +2(+4*)
+
+* Only for fighters
+
+
+
+Charisma Table
+
+Ability    Reaction
+ Score    Adjustment
+--------------------
+    3        -5
+    4        -4
+    5        -3
+    6        -2
+    7        -1
+  8-12        0
+   13        +1
+   14        +2
+   15        +3
+   16        +5
+   17        +6
+   18        +7

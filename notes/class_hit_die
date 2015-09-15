@@ -1,0 +1,17 @@
+                         Max Number
+Class          Hit Die    Hit Dice   Spell Ability
+--------------------------------------------------
+Cleric          1d8          9           yes
+ -Druid         1d8         14           yes
+Fighter         1d10         9           no 
+ -Paladin       1d10         9           yes*
+ -Ranger        1d8**       10           yes***
+Magic-User      1d4         11           yes
+ -Illusionist   1d4         10           yes
+Thief           1d6         10           no
+
+*   Gains first clerical spells up to 4th level. Starts at lvl 9
+
+**  Rangers get an extra 1d8 when first created ie. level 1 ranger rolls 2d8
+
+*** Gaints first druidic spells up to 3rd lvl first gained at 8th lvl. Use of magic-user spells up to 2nd lvl starts at lvl 9

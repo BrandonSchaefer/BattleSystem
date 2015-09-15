@@ -1,0 +1,186 @@
+Treasure    1000's of    1000's of    1000's of    1000's of    1000's of
+  Type       Copper       Silver      Electrum       Gold       Platinum     Gems          Jewelry     Maps Or Magic
+--------------------------------------------------------------------------------------------------------------------
+   A        1-6: 25%     1-6: 30%     1-6: 35%     1-10: 40%    1-4: 25%    4-40: 60%     3-30: 50%    Any 3: 30%
+   B        1-8: 50%     1-6: 25%     1-4: 25%     1-3:  25%       0%        1-8: 30%     1-4: 20%     sword, armor or misc: 10%
+   C       1-12: 20%     1-6: 30%     1-4: 10%        0%           0%        1-6: 25%     1-3: 20%     Any 2:                10%
+   D        1-8: 10%    1-12: 15%     1-8: 15%     1-6:  50%       0%       1-10: 30%     1-6: 25%     Any 2 plus 1 potion:  15%
+   E       1-10:  5%    1-12: 25%     1-6: 25%     1-8:  25%       0%       1-12: 15%     1-8: 10%     Any 3 plus 1 scroll:  25%
+   F           0%       1-20: 10%    1-12: 15%    1-10:  40%    1-8: 35%    3-30: 20%    1-10: 10%     Any 3 execpt swords or misc weapons, plus 1 potion & 1 scroll 30%
+   G           0%           0%           0%      10-40:  50%   1-20: 50%    5-20: 30%    1-10: 25%     Any 4 plus 1 scroll:  35%
+   H       5-30: 25%   1-100: 40%   10-40: 40%   10-60:  55%   5-50: 25%   1-100: 50%   10-40: 50%     Any 4 plus 1 potion & 1 scroll: 15%
+   I           0%           0%           0%           0%       3-18: 30%    2-20: 55%    1-12: 50%     Any 1: 15%
+   J       3-24 ppi*        0%           0%           0%           0%           0%           0%        0%
+   K           0%       3-18 ppi*        0%           0%           0%           0%           0%        0%
+   L           0%           0%       2-12 ppi*        0%           0%           0%           0%        0%
+   M           0%           0%           0%        2-8 ppi*        0%           0%           0%        0%
+   N           0%           0%           0%           0%        1-6 ppi*        0%           0%        0%
+   O        1-4: 25%     1-3: 20%        0%           0%           0%           0%           0%        0%
+   P           0%        1-6: 30%     1-2: 25%        0%           0%           0%           0%        0%
+   Q           0%           0%           0%           0%           0%        1-4: 50%        0%        0%
+   R           0%           0%           0%        2-8: 40%   10-60: 50%    4-32: 55%    1-12: 45%     0%
+   S           0%           0%           0%           0%           0%           0%           0%        2-8 potions: 40%
+   T           0%           0%           0%           0%           0%           0%           0%        1-4 scrolls: 50%
+   U           0%           0%           0%           0%           0%      10-80: 80%    5-30: 80%     1 of each magic excluding potions & scrolls: 70%
+   V           0%           0%           0%           0%           0%           0%           0%        2 of each magic excluding potions & scrolls: 85%
+   W           0%           0%           0%       5-30: 60%     1-8: 15%   10-80: 60%    5-40: 50%     1 map: 55%
+   X           0%           0%           0%           0%           0%           0%           0%        1 misc. magic plus 1 potion: 60%
+   Y           0%           0%           0%       2-12: 70%        0%           0%           0%        0%
+   Z        1-3: 20%      1-4: 25%     1-4: 25%    1-4: 30%     1-6: 30%   10-60: 55%    5-30: 50%     Any 3 magic: 50%
+
+
+ppi* == pieces per individual
+
+TREASURE_TYPE
+
+strcut TreasureBreed
+{
+  int num_rolls;
+  int die;
+  int chance;
+};
+
+struct TreasureColunm
+{
+  int                 pieces_per_individual;
+  TreasureBreed       copper;
+  TreasureBreed       silver;
+  TreasureBreed       electrum;
+  TreasureBreed       gold;
+  TreasureBreed       gems;
+  TreasureBreed       jewelry;
+  //MagricTreasureBreed magic;
+};
+
+struct TreasureDice
+{
+  Dice amount;
+  int  chance;
+};
+
+class Treasure
+{
+public:
+  Treasure(TreasureType const& type);
+
+private:
+  TreasureDice copper_;
+  TreasureDice silver_;
+  TreasureDice electrum_;
+  TreasureDice gold_;
+  TreasureDice gems_;
+  TreasureDice jewelry_;
+};
+
+class TreasureGenerator
+{
+public:
+
+prviate:
+};
+
+TreasureDice[] = {
+                   {0, {1, 6, 25}, {1,  6, 30}, {1, 6, 35}, {1,10, 40}, {1, 4, 25}, {4, 10, 60}, {3,10, 50}, {0, 0, 30}}, // A
+                   {0, {1, 8, 50}, {1,  6, 25}, {1, 4, 25}, {1, 3, 25}, {0, 0,  0}, {1,  8, 30}, {1, 4, 20}, {0, 0, 10}}, // B
+                   {0, {1,12, 20}, {1,  6, 30}, {1, 4, 10}, {0, 0,  0}, {0, 0,  0}, {1,  6, 25}, {1, 3, 20}, {0, 0, 10}}, // C
+                   {0, {1, 8, 10}, {1, 12, 15}, {1, 8, 15}, {1, 6, 50}, {0, 0,  0}, {1, 10, 30}, {1, 6, 25}, {0, 0, 15}}, // D
+                   {0, {1,10,  5}, {1, 12, 25}, {1, 6, 25}, {1, 8, 25}, {0, 0,  0}, {1, 12, 15}, {1, 8, 10}, {0, 0, 25}}, // E
+                   {0, {0, 0,  0}, {1, 20, 10}, {1,12, 15}, {1,10, 40}, {1, 8, 35}, {3, 10, 20}, {1,10, 10}, {0, 0, 30}}, // F
+                   {0, {0, 0,  0}, {0,  0,  0}, {0, 0,  0}, {10,4, 50}, {1,20, 50}, {5,  4, 30}, {1,10, 25}, {0, 0, 35}}, // G
+                   {0, {5, 6, 25}, {1,100, 40}, {10,4, 40}, {10,6, 55}, {5,10, 25}, {1,100, 50}, {10,4, 50}, {0, 0, 15}}, // H
+                   {0, {0, 0,  0}, {0,  0,  0}, {0, 0,  0}, {0, 0   0}, {3, 6, 30}, {2, 10, 55}, {1,12, 50}, {0, 0, 15}}, // I
+                   {1, {3, 8,100}, {0,  0,  0}, {0, 0,  0}, {0, 0   0}, {0, 0,  0}, {0,  0,  0}, {0, 0,  0}, {0, 0,  0}}, // J
+                   {1, {0, 0,  0}, {3,  6,100}, {0, 0,  0}, {0, 0   0}, {0, 0,  0}, {0,  0,  0}, {0, 0,  0}, {0, 0,  0}}, // K
+                   {1, {0, 0,  0}, {0,  0,  0}, {2, 6,100}, {0, 0   0}, {0, 0,  0}, {0,  0,  0}, {0, 0,  0}, {0, 0,  0}}, // L
+                   {1, {0, 0,  0}, {0,  0,  0}, {0, 0,  0}, {2, 4,100}, {0, 0,  0}, {0,  0,  0}, {0, 0,  0}, {0, 0,  0}}, // M
+                   {1, {0, 0,  0}, {0,  0,  0}, {0, 0,  0}, {0, 0   0}, {1, 6,100}, {0,  0,  0}, {0, 0,  0}, {0, 0,  0}}, // N
+                   {0, {1, 4, 25}, {1,  3, 20}, {0, 0,  0}, {0, 0,  0}, {0, 0   0}, {0,  0,  0}, {0, 0,  0}, {0, 0,  0}}, // O
+                   {0, {0, 0,  0}, {1,  6, 30}, {1, 2, 25}, {0, 0,  0}, {0, 0   0}, {0,  0,  0}, {0, 0,  0}, {0, 0,  0}}, // P
+                   {0, {0, 0,  0}, {0,  0,  0}, {0, 0,  0}, {0, 0   0}, {0, 0,  0}, {1,  4, 45}, {0, 0,  0}, {0, 0,  0}}, // Q
+                   {0, {0, 0,  0}, {0,  0,  0}, {0, 0,  0}, {2, 4, 40}, {10,6, 50}, {4,  8, 55}, {1,12, 45}, {0, 0,  0}}, // R
+                   {0, {0, 0,  0}, {0,  0,  0}, {0, 0,  0}, {0, 0   0}, {0, 0,  0}, {0,  0,  0}, {0, 0,  0}, {2, 4, 40}}, // S
+                   {0, {0, 0,  0}, {0,  0,  0}, {0, 0,  0}, {0, 0   0}, {0, 0,  0}, {0,  0,  0}, {0, 0,  0}, {1, 4, 50}}, // T
+                   {0, {0, 0,  0}, {0,  0,  0}, {0, 0,  0}, {0, 0   0}, {0, 0,  0}, {10, 8, 80}, {5, 6, 80}, {0, 0, 70}}, // U
+                   {0, {0, 0,  0}, {0,  0,  0}, {0, 0,  0}, {0, 0   0}, {0, 0,  0}, {0,  0,  0}, {0, 0,  0}, {0, 0, 85}}, // V
+                   {0, {0, 0,  0}, {0,  0,  0}, {0, 0,  0}, {5, 6, 60}, {1, 8, 15}, {10, 8, 60}, {5, 8, 50}, {0, 0, 55}}, // W
+                   {0, {0, 0,  0}, {0,  0,  0}, {0, 0,  0}, {0, 0   0}, {0, 0,  0}, {0,  0,  0}, {0, 0,  0}, {0, 0, 60}}, // X
+                   {0, {0, 0,  0}, {0,  0,  0}, {0, 0,  0}, {2, 6, 70}, {0, 0,  0}, {0,  0,  0}, {0, 0,  0}, {0, 0,  0}}, // Y
+                   {0, {1, 3, 20}, {1,  4, 25}, {1, 4, 25}, {1, 4, 30}, {1, 6, 30}, {10, 6, 55}, {5, 6, 50}, {0, 0, 50}}, // Z
+                 };
+
+Treasure    1000's of    1000's of    1000's of    1000's of    1000's of
+  Type       Copper       Silver      Electrum       Gold       Platinum     Gems          Jewelry     Maps Or Magic
+
+2-8   :  2d4
+3-18  :  3d6
+3-24  :  3d8
+3-30  :  3d10
+4-32  :  4d8
+4-40  :  4d10
+5-20  :  5d4
+5-30  :  5d6
+5-50  :  5d10
+10-40 : 10d4
+
+TreasureMatrix[] = {{
+
+
+struct TreasureBreed
+{
+  Dice number_of_treasure;
+  int  change_of_drop;
+  int  number_of_monsters;
+  bool pieces_per_individual;
+};
+
+class Treasure
+{
+public:
+  Treasure(TreasureBreed const& treasure);
+};
+
+int t
+
+
+Other
+{
+  int multi;
+  Treasure treasure;
+};
+
+Treasure
+{
+  int percentage;
+  bool ppi;
+  Dice 
+};
+
+
+
+Gems:
+
+Dice Score  Base Value  Description            (or Size)
+-----------------------------------------------------
+ 1-25        10 g.p     Ornamental Stones       very small
+26-50        50 g.p     semi-prescious stones   small
+51-70       100 g.p     fancy stones            average
+71-90       500 g.p     fancy stones (precious) large
+91-99      1000 g.p     gem stones              very large
+  100      5000 g.p     gem stones (jewels)     huge
+
+
+Jewelry:
+
+Dice Score   Base Value        Desscription
+---------------------------------------------------------
+  1-10       100-1000 g.p      Ivory or wrought silver
+ 11-20       200-1200 g.p      wrought silver and gold
+ 21-40       300-1800 g.p      wrought gold
+ 41-50       500-3000 g.p      jade, coral or wrought platinum
+ 51-70      1000-6000 g.p      silver with gems
+ 71-90      2000-8000 g.p      gold with gems
+ 91-00     2000-12000 g.p      platinum with gems
+
+Roll dice_roll = 1d100
+Roll exception = 1d10
+value = base_value[dice_roll - 1 % 10] * exception;

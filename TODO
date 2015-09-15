@@ -1,0 +1,162 @@
+Melee Combat:
+  
+Range Combat:
+Magic Comabt:
+
+
+AttackableUnit
+{
+  virtual int AttackSpeed()     const;
+  virtual int NumberOfAttacks() const;
+  virtual int AttackRange()     const;
+  virtual int ArmorClass()      const;
+}
+
+
+Character
+{
+  int strength_;
+  // Only used for str of 18
+  int percent_str_;
+
+  int intelligence_;
+  int wisdom_;
+  int dexterity_;
+  int constitution_;
+  int charisma_;
+}
+
+Character CreateNewCharacter()
+{
+}
+
+
+Base Movement - based on armor!:
+12" - Nothing, Leather, Elven Chain
+9"  - Banded, Chain, Padded, Ring, Studded
+6"  - Plate Mail, Scale, Splint
+
+^^
+Magic Armor - Next Higher Base Movment -- Half weight
+
+
+Armor Class:
+Large Shields + 1 to AC
+
+
+Basic to Comabt:
+
+While Still Fighting:
+  Determine Init per person
+  Generate list of who goes first (init + weapon speed)
+  Go through the list of Units and determine their action
+  Repeat
+
+1: Determine surprised
+2: Determine Distance
+3: Figure out Initiative
+4: Handle Round
+5: Figure out resultures per side
+6: Continue each round by initative until one party fless or dies
+
+Initative = 1d6 + weapon speed
+ Lowest   = First to go
+ If more then 1 attack, attack after everyones first attack.
+
+Breaking Off From Melee:
+ Allows attack one free attack action (such from the rear)
+
+Attack From Flank:
+ Negagte Sheild Bouns
+
+Attack From the Rear:
+ +2 to hit, negate shield and dex bonus
+
+Attack to a stunned, prone, motionless opponets:
+  Same as rear attack expect +4 to hit
+
+Magically Sleeping/Held:
+  Automatically Hit, and max damage possible
+
+
+WHAT DO I NEED PER THINGS:
+- AttackSpeed
+- ArmorClass
+- DexterityBouns // Special cases for flanking/rear attacks
+- ShieldBouns    // Special cases for flanking/rear attacks
+- Health
+- WeaponRange
+
+Size     Speed
+--------------
+Tiny        +0
+Small       +3
+Medium      +3
+Large       +6
+Huge        +9
+Gargantuan  +12
+
+
+Need to know about ENGAGED creates... ie. if a create leaves an engagement the other gets a free attack (maybe?)
+Maybe this should just be a check every time a character attempts to move.
+  ie. Move from cell 0,0 to 0,1 but there was a creater in 1,0 who now gets a free hit
+
+
+Attack
+
+Weapon
+  name
+  cost
+  damage
+  damage_large
+  speed
+
+Main Battle Loop/Engament:
+while StillFighting():
+  Generate list of attacks for the round (NEED TO DO THIS PER ROUND) <---- Need a list of both sides
+
+
+GroupOfUnits const& group1, GroupOfUnits const& group2
+
+int group1_init = d6.Roll();
+int group2_init = d6.Roll();
+
+struct UnitInitative
+{
+  int speed_and_init;
+  Unit::Ptr unit;
+};
+
+Units/Monsters Stats:
+Special Defenses/Magic Resistances
+
+Copper   = c.p
+Silver   = s.p
+Gold     = g.p
+Electrum = e.p
+platinum = p.p
+
+10 c.p = 1 s.p
+20 s.p = 1 g.p
+ 2 e.p = 1 g.p
+ 1 p.p = 5 g.p
+
+200 c.p = 20 s.p = 2 e.p = 1 g.p = 1/5 p.p
+
+
+Class  Starting Gold
+--------------------
+Cleric   3d6   * 10
+Fighter  5d4   * 10
+Mage     1d4+1 * 10
+Thief    2d6   * 10
+
+
+
+In World TODOS:
+Wander - Rest
+
+In Combat TODOS:
+Attack - Defend - Spells
+Move   - Bag    - Run
+
